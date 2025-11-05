@@ -1,0 +1,28 @@
+button {
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+button:is(:focus, :focus-visible) {
+    outline: var(--redBorderFocus);
+    outline-offset: 2px;
+}
+
+.theme-button {
+    width: 48px;
+    aspect-ratio: 1/1;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    border-radius: var(--littleRadius);
+}
+
+.light-theme .theme-button {
+    background-color: var(--lightGreyBackground);
+    background-image: url("../../assets/img/icon-moon.svg");
+}
+
+.dark-theme .theme-button {
+    background-color: var(--darkGreyBackground);
+    background-image: url("../../assets/img/icon-sun.svg");
+}

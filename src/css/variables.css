@@ -1,0 +1,17 @@
+:root {
+    --baseFontSize: 16px;
+    --littleRadius: 10px;
+    --redBorderFocus: solid 1.5px hsl(3, 86%, 64%);
+
+    --lightBackground: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+    --lightItemsBackground: hsl(200, 60%, 99%);
+    --lightGreyBackground: hsl(0, 0%, 93%);
+    --lightBoxShadow: hsl(0, 0%, 78%)0px 2px 8px;
+    --lightBoxShadow: hsl(217, 61%, 90%) 0px 1px 8px;
+    --lightRed: hsl(3, 77%, 44%);
+
+    --darkBackground: linear-gradient(180deg, #040918 0%, #091540 100%);
+    --darkItemsBackground: hsl(226, 25%, 17%);
+    --darkGreyBackground: hsl(225, 23%, 24%);
+    --darkRed: hsl(3, 71%, 56%)
+}

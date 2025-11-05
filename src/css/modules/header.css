@@ -1,0 +1,36 @@
+header {
+    width: 80%;
+    max-width: 1170px;
+    border-radius: var(--littleRadius);
+    padding: 10px;
+    padding: 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.light-theme header {
+    background-color: var(--lightItemsBackground);
+    border: solid 1px hsl(217, 61%, 90%);
+    box-shadow: var(--lightBoxShadow);
+}
+
+.light-theme .dynamique-color-svg.red {
+    fill: var(--lightRed);
+}
+
+.light-theme .dynamique-color-svg.blue-white {
+    fill: #091540;
+}
+
+.dark-theme header {
+    background-color: var(--darkItemsBackground);
+}
+
+.dark-theme .dynamique-color-svg.red {
+    fill: var(--darkRed)
+}
+
+.dark-theme .dynamique-color-svg.blue-white {
+    fill: #FFFFFF;
+}
