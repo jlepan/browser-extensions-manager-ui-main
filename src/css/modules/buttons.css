@@ -22,7 +22,15 @@ button:is(:focus, :focus-visible) {
     background-image: url("../../assets/img/icon-moon.svg");
 }
 
+.light-theme .theme-button:hover {
+    background-color: var(--lightHoverBackground);
+}
+
 .dark-theme .theme-button {
     background-color: var(--darkGreyBackground);
     background-image: url("../../assets/img/icon-sun.svg");
+}
+
+.dark-theme .theme-button:hover {
+    background-color: var(--darkHoverBackground);
 }

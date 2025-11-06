@@ -1,5 +1,6 @@
-import { themeButton } from './functions/themButton.js';
+import { ThemeManager } from "./modules/ThemeManager.js";
 
 window.addEventListener('DOMContentLoaded', () => {
-    themeButton();
+    const themeManager = new ThemeManager();
+    themeManager.init();
 });

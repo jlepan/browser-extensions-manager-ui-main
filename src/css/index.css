@@ -3,6 +3,12 @@
 @import url("./modules/buttons.css");
 @import url("./modules/header.css");
 
+* {
+  transition: background-color 0.4s ease,
+              color 0.4s ease,
+              border-color 0.4s ease;
+}
+
 body {
     font-size: var(--baseFontSize);
     min-height: 100vh;
@@ -18,3 +24,16 @@ body.light-theme {
 body.dark-theme {
     background: var(--darkBackground);
 }
+
+/*.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}*/
