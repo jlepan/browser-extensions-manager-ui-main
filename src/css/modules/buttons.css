@@ -1,10 +1,35 @@
 button {
+    font-family: var(--baseFontFamily);
     cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    transition: background-color 0.3s ease, 
+                box-shadow 0.3s ease, 
+                border 0.3s ease,
+                color 0.3s ease,
+                opacity 0.3s ease;
+    border: none;
+    border-radius: var(--bigRadius);
+    font-weight: var(--mediumWeight);
+}
+
+.light-theme button {
+    color: var(--lightTextButtonColor);
+    background-color: var(--lightItemsBackground);
+    border: var(--lightBorder);
+    box-shadow: var(--lightBoxShadow);
+}
+
+.dark-theme button {
+    color: var(--darkTextButtonColor);
+    background-color: var(--darkGreyBackground);
+    border: var(--darkBorder);
 }
 
 button:is(:focus, :focus-visible) {
     outline: var(--redBorderFocus);
+}
+
+.dark-theme button:is(:focus, :focus-visible) {
+    background-color: var(--darkHoverBackground);
     outline-offset: 2px;
 }
 
@@ -13,7 +38,8 @@ button:is(:focus, :focus-visible) {
     aspect-ratio: 1/1;
     background-repeat: no-repeat;
     background-position: center;
-    border: none;
+    border: none!important;
+    box-shadow: none!important;
     border-radius: var(--littleRadius);
 }
 
@@ -29,8 +55,42 @@ button:is(:focus, :focus-visible) {
 .dark-theme .theme-button {
     background-color: var(--darkGreyBackground);
     background-image: url("../../assets/img/icon-sun.svg");
+    border: none;
 }
 
 .dark-theme .theme-button:hover {
     background-color: var(--darkHoverBackground);
+}
+
+.button-group.filter button {
+    padding: 0.4em 1em 0.5em;
+    font-size: 1.2rem;
+}
+
+.light-theme button.active {
+    background-color: var(--lightRed);
+    color: var(--darkTextButtonColor);
+}
+
+.dark-theme button.active {
+    border: none;
+    box-shadow: none;
+    background-color: var(--darkRed);
+    color: var(--lightTextButtonColor);
+}
+
+.light-theme .button-group.filter button:hover:not(.active) {
+    opacity: 0.6;
+}
+
+.light-theme .button-group.filter button.active:hover {
+    background-color: var(--mediumRed);
+}
+
+.dark-theme .button-group.filter button:hover:not(.active) {
+    background-color: var(--darkHoverBackground)
+}
+
+.dark-theme .button-group.filter button.active:hover {
+    background-color: var(--mediumRed);
 }

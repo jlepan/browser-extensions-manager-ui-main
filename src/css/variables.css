@@ -1,19 +1,33 @@
 :root {
     --baseFontSize: 16px;
+    --baseFontFamily: "Noto Sans", Arial, Helvetica, sans-serif;
     --littleRadius: 10px;
-    --redBorderFocus: solid 1.5px hsl(3, 86%, 64%);
+    --mediumRadius: 20px;
+    --bigRadius: 30px;
+    --redBorderFocus: solid 2px hsl(3, 86%, 64%);
+    --lightWeight: 400;
+    --mediumWeight: 500;
+    --boldWeight: 700;
+
+    --lightTitleColor: hsl(227, 75%, 14%);
+    --darkTitleColor: hsl(200, 60%, 99%);
+    --mediumRed: hsl(3, 71%, 56%);
 
     --lightBackground: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+    --lightTextButtonColor: hsl(225, 23%, 24%);
     --lightItemsBackground: hsl(200, 60%, 99%);
     --lightGreyBackground: hsl(0, 0%, 93%);
+    --lightBorder: solid 2px hsl(217, 61%, 90%);
     --lightBoxShadow: hsl(0, 0%, 78%)0px 2px 8px;
     --lightBoxShadow: hsl(217, 61%, 90%) 0px 1px 8px;
     --lightRed: hsl(3, 77%, 44%);
     --lightHoverBackground: hsl(0, 0%, 78%);
 
     --darkBackground: linear-gradient(180deg, #040918 0%, #091540 100%);
+    --darkTextButtonColor: hsl(200, 60%, 99%);
     --darkItemsBackground: hsl(226, 25%, 17%);
     --darkGreyBackground: hsl(225, 23%, 24%);
-    --darkRed: hsl(3, 71%, 56%);
+    --darkBorder: solid 1px hsl(226, 11%, 37%);
+    --darkRed: hsl(3, 86%, 64%);
     --darkHoverBackground: hsl(226, 11%, 37%);
 }

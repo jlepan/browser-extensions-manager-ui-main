@@ -2,6 +2,12 @@
 @import url("./variables.css");
 @import url("./modules/buttons.css");
 @import url("./modules/header.css");
+@import url("./modules/header-main.css");
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../assets/fonts/NotoSans-VariableFont_wdth\,wght.ttf") format("truetype");
+}
 
 * {
   transition: background-color 0.4s ease,
@@ -11,6 +17,7 @@
 
 body {
     font-size: var(--baseFontSize);
+    font-family: var(--baseFontFamily);
     min-height: 100vh;
     padding-block: 20px;
     display: flex;
@@ -23,6 +30,11 @@ body.light-theme {
 
 body.dark-theme {
     background: var(--darkBackground);
+}
+
+.container {
+  width: 80%;
+  max-width: 1170px;
 }
 
 /*.sr-only {
