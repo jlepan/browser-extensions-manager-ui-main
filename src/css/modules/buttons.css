@@ -131,7 +131,7 @@ button:is(:focus, :focus-visible) {
     border-color: var(--mediumRed)
 }
 
-.light-theme .card-extension_remove-button:is(:focus, :focus-visible) {
+.dark-them .card-extension_remove-button:is(:focus, :focus-visible) {
     background-color: var(--darkHoverBackground);
     border-color: var(--darkHoverBackground)
 }

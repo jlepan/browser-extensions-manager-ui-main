@@ -11,7 +11,7 @@ export class ButtonsFilter {
     /** @type {string} */
     #activeButtonClass = "active";
     /** @type {string} */
-    #visbileCardClass = "visible";
+    #visibleCardClass = "visible";
     /** @type {string} */
     #dataFilter = "all";
     
@@ -54,10 +54,10 @@ export class ButtonsFilter {
         this.#groupCards.forEach(card => {
             const cardStatus = card.getAttribute('data-status');
             if (this.#dataFilter === 'all' || this.#dataFilter === cardStatus) {
-                card.classList.add(this.#visbileCardClass);
+                card.classList.add(this.#visibleCardClass);
                 card.setAttribute("aria-hidden", "false");
             } else {
-                card.classList.remove(this.#visbileCardClass);
+                card.classList.remove(this.#visibleCardClass);
                 card.setAttribute("aria-hidden", "true");
             }
         })
