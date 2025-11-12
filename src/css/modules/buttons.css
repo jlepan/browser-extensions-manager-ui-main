@@ -8,7 +8,7 @@ button {
                 opacity 0.3s ease;
     border: none;
     border-radius: var(--bigRadius);
-    font-weight: var(--mediumWeight);
+    font-weight: 600;
 }
 
 .light-theme button {
@@ -26,6 +26,7 @@ button {
 
 button:is(:focus, :focus-visible) {
     outline: var(--redBorderFocus);
+    outline-offset: 2px;
 }
 
 .dark-theme button:is(:focus, :focus-visible) {
@@ -93,4 +94,114 @@ button:is(:focus, :focus-visible) {
 
 .dark-theme .button-group.filter button.active:hover {
     background-color: var(--mediumRed);
+}
+
+.card-extension_remove-button {
+    padding: 0.3em 1em 0.4em;
+    font-size: 1.1rem;
+    letter-spacing: -0.04em;
+}
+
+.light-theme .card-extension_remove-button {
+    box-shadow: none;
+    color: var(--lightTextButtonColor);
+    border-width: 1.8px;
+}
+
+.light-theme .card-extension_remove-button:hover {
+    color: var(--darkTextButtonColor);
+    background-color: var(--lightRed);
+    border-color: var(--lightRed)
+}
+
+.light-theme .card-extension_remove-button:is(:focus, :focus-visible) {
+    background-color: var(--lightGreyBackground);
+    border-color: var(--lightGreyBackground);
+}
+
+.dark-theme .card-extension_remove-button {
+    color: var(--darkTextButtonColor);
+    background-color: var(--darkHeaderBackground);
+    border-width: 1.8px
+}
+
+.dark-theme .card-extension_remove-button:hover {
+    color: var(--lightTextButtonColor);
+    background-color: var(--mediumRed);
+    border-color: var(--mediumRed)
+}
+
+.light-theme .card-extension_remove-button:is(:focus, :focus-visible) {
+    background-color: var(--darkHoverBackground);
+    border-color: var(--darkHoverBackground)
+}
+
+.card-extension_is-active-button {
+    align-self: center;
+    position: relative;
+    width: 44px;
+    height: 24px;
+}
+
+.light-theme .card-extension[data-status="active"] .card-extension_is-active-button {
+    background-color: var(--lightRed);
+    border: solid 2px var(--lightRed);
+    box-shadow: none;
+}
+
+.light-theme .card-extension[data-status="active"] .card-extension_is-active-button:hover {
+    background-color: var(--mediumRed);
+    border-color: var(--mediumRed)
+}
+
+.dark-theme .card-extension[data-status="active"] .card-extension_is-active-button {
+    background-color: var(--darkRed);
+    border: solid 1px var(--darkRed);
+    box-shadow: none;
+}
+
+.dark-theme .card-extension[data-status="active"] .card-extension_is-active-button:hover {
+    background-color: var(--mediumRed);
+    border-color: var(--mediumRed);
+}
+
+.light-theme .card-extension[data-status="inactive"] .card-extension_is-active-button {
+    background-color: var(--lightMediumGrey);
+    border: solid 2px var(--lightMediumGrey);
+    box-shadow: none;
+}
+
+.light-theme .card-extension[data-status="inactive"] .card-extension_is-active-button:hover {
+    background-color: hsl(0, 0%, 70%);
+    border-color: hsl(0, 0%, 70%)
+}
+
+.dark-theme .card-extension[data-status="inactive"] .card-extension_is-active-button {
+    background-color: var(--darkButtonBackground);
+    border: solid 2px var(--darkButtonBackground);
+    box-shadow: none;
+}
+
+.dark-theme .card-extension[data-status="inactive"] .card-extension_is-active-button:hover {
+    background-color: var(--darkHoverBackground);
+    border-color: var(--darkHoverBackground);
+}
+
+.card-extension_round-to-update {
+    background-color: var(--lightItemsBackground);
+    position: absolute;
+    width: 45%;
+    /*height: 88%;*/
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.card-extension[data-status="active"] .card-extension_round-to-update {
+    right: 2%;
+}
+
+.card-extension[data-status="inactive"] .card-extension_round-to-update {
+    left: 2%;
 }

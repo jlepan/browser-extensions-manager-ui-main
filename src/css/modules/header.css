@@ -29,7 +29,7 @@ header {
 }
 
 .dark-theme header {
-    background-color: var(--darkItemsBackground);
+    background-color: var(--darkHeaderBackground);
 }
 
 .dark-theme .dynamique-color-svg.red {

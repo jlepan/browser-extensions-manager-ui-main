@@ -5,6 +5,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const themeManager = new ThemeManager();
     themeManager.init();
 
-    const buttonsFilter = new ButtonsFilter(".filter-group-extension-js", "card-extension-js");
+    const buttonsFilter = new ButtonsFilter(".filter-group-extension-js", ".card-extension-js");
     buttonsFilter.init();
 });

@@ -28,6 +28,7 @@ export class ButtonsFilter {
     }
 
     init() {
+        this.#filterCards();
         this.#buttons.forEach(button => {
             button.addEventListener('click', this.#handleClick.bind(this));
         })
