@@ -1,13 +1,24 @@
 import { ThemeManager } from "./modules/ThemeManager.js";
-import { ButtonsFilter } from "./modules/ButtonsFilter.js";
-import { createCardExtension } from "./functions/createCardExtension.js";
+import { initFilters } from "./functions/initFilters.js";
+import { initExtensionCard } from "./functions/initExtensionCard.js";
+import { restoreExtensionCard } from "./functions/restoreExtensionCard.js";
+import { getExtensionsData } from "./functions/getExtensionsData.js";
 
 window.addEventListener('DOMContentLoaded', () => {
-    createCardExtension().then(() => {
-        const buttonsFilter = new ButtonsFilter(".filter-group-extension-js", ".card-extension-js");
-        buttonsFilter.init();
-    });
-
     const themeManager = new ThemeManager();
     themeManager.init();
+
+    getExtensionsData();
+
+    initExtensionCard().then(() => {
+        initFilters(".filter-group-extension-js", ".card-extension-js");
+    });
+
+    const restoreButton = document.querySelector(".restore-button-js");
+    restoreButton.addEventListener("click", e => {
+        e.preventDefault();
+        restoreExtensionCard().then(() => {
+            initFilters(".filter-group-extension-js", ".card-extension-js");
+        })
+    })
 });
