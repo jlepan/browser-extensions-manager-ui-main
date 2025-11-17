@@ -7,6 +7,8 @@ export class ButtonsFilter {
   #groupCards;
   /** @type {HTMLElement} */
   #containerCards;
+  /** @type {string} */
+  #cardsSelector
   /** @type {HTMLElement} */
   #activeButton;
   /** @type {string} */
@@ -24,8 +26,8 @@ export class ButtonsFilter {
 
   constructor(groupSelector, cardsSelector, containerSelector) {
     this.#groupButtons = document.querySelector(groupSelector);
-    this.#groupCards = document.querySelectorAll(cardsSelector);
     this.#containerCards = document.querySelector(containerSelector);
+    this.#cardsSelector = cardsSelector;
     this.#buttons = this.#groupButtons.querySelectorAll("button");
     this.#activeButton = this.#groupButtons.querySelector(`button.${this.#activeButtonClass}`);
   }
@@ -37,6 +39,10 @@ export class ButtonsFilter {
     });
     this.#containerCards.addEventListener("card-status-changed", this.#filterCards.bind(this));
     this.#containerCards.addEventListener("extensions-restored", this.#filterCards.bind(this));
+  }
+
+  #getCards() {
+    return this.#containerCards.querySelectorAll(this.#cardsSelector)
   }
 
   #handleClick(e) {
@@ -56,6 +62,8 @@ export class ButtonsFilter {
   }
 
   #filterCards() {
+    this.#groupCards = this.#getCards();
+
     this.#groupCards.forEach((card) => {
       const cardStatus = card.getAttribute("data-status");
       if (this.#dataFilter === "all" || this.#dataFilter === cardStatus) {
