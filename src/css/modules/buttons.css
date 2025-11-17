@@ -11,6 +11,8 @@ button {
     font-weight: 600;
 }
 
+/* BOUTON DE CHANGEMENT DE THÈME */
+
 .light-theme button {
     color: var(--lightTextButtonColor);
     background-color: var(--lightItemsBackground);
@@ -63,6 +65,8 @@ button:is(:focus, :focus-visible) {
     background-color: var(--darkHoverBackground);
 }
 
+/* BOUTONS FILTRES DES CARD EXTENSION */
+
 .button-group.filter button {
     padding: 0.4em 1em 0.5em;
     font-size: 1.2rem;
@@ -95,6 +99,8 @@ button:is(:focus, :focus-visible) {
 .dark-theme .button-group.filter button.active:hover {
     background-color: var(--mediumRed);
 }
+
+/* BOUTON DE SUPPRESSION DE CARD EXTENSION */
 
 .card-extension_remove-button {
     padding: 0.3em 1em 0.4em;
@@ -136,6 +142,8 @@ button:is(:focus, :focus-visible) {
     background-color: var(--darkHoverBackground);
     border-color: var(--darkHoverBackground)
 }
+
+/* BOUTON DE MISE À JOUR DU STATUT DE CARD EXTENSION */
 
 .card-extension_is-active-button {
     align-self: center;
@@ -206,6 +214,8 @@ button:is(:focus, :focus-visible) {
 .card-extension[data-status="inactive"] .card-extension_round-to-update {
     left: 2%;
 }
+
+/* BOUTON POUR RESTAURER LES CARD EXTENSION SUPPRIMÉES */
 
 .restore-button {
     position: absolute;

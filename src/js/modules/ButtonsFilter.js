@@ -7,6 +7,8 @@ export class ButtonsFilter {
     /** @type {NodeListOf<HTMLElement>} */
     #groupCards;
     /** @type {HTMLElement} */
+    #containerCards;
+    /** @type {HTMLElement} */
     #activeButton
     /** @type {string} */
     #activeButtonClass = "active";
@@ -18,11 +20,13 @@ export class ButtonsFilter {
     /**
      * @param {string} groupSelector - sélecteur du conteneur de boutons
      * @param {string} cardsSelector - sélecteur des cartes à filtrer
+     * @param {string} containerSelector - sélecteur du conteneur des cartes à filtrer
      */
 
-    constructor(groupSelector, cardsSelector) {
+    constructor(groupSelector, cardsSelector, containerSelector) {
         this.#groupButtons = document.querySelector(groupSelector);
         this.#groupCards = document.querySelectorAll(cardsSelector);
+        this.#containerCards = document.querySelector(containerSelector);
         this.#buttons = this.#groupButtons.querySelectorAll('button');
         this.#activeButton = this.#groupButtons.querySelector(`button.${this.#activeButtonClass}`);
     }
@@ -31,7 +35,8 @@ export class ButtonsFilter {
         this.#filterCards();
         this.#buttons.forEach(button => {
             button.addEventListener('click', this.#handleClick.bind(this));
-        })
+        });
+        this.#containerCards.addEventListener("card-status-changed", this.#filterCards.bind(this));
     }
 
     #handleClick(e) {
@@ -54,6 +59,7 @@ export class ButtonsFilter {
         this.#groupCards.forEach(card => {
             const cardStatus = card.getAttribute('data-status');
             if (this.#dataFilter === 'all' || this.#dataFilter === cardStatus) {
+                document.activeElement.blur();
                 card.classList.add(this.#visibleCardClass);
                 card.setAttribute("aria-hidden", "false");
             } else {

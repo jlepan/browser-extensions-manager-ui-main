@@ -1,6 +1,6 @@
 import { ButtonsFilter } from "../modules/ButtonsFilter.js";
 
-export function initFilters(firstFilter, secundFilter) {
-    const buttonsFilter = new ButtonsFilter(firstFilter, secundFilter);
+export function initFilters(buttons, cards, containerCards) {
+    const buttonsFilter = new ButtonsFilter(buttons, cards, containerCards);
     buttonsFilter.init();
 }

@@ -10,15 +10,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
     getExtensionsData();
 
-    initExtensionCard().then(() => {
-        initFilters(".filter-group-extension-js", ".card-extension-js");
-    });
+    initExtensionCard()
+    initFilters(".filter-group-extension-js", ".card-extension-js", ".group-cards-extension");
 
     const restoreButton = document.querySelector(".restore-button-js");
     restoreButton.addEventListener("click", e => {
         e.preventDefault();
-        restoreExtensionCard().then(() => {
-            initFilters(".filter-group-extension-js", ".card-extension-js");
-        })
+        restoreExtensionCard()
     })
 });

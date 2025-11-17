@@ -2,12 +2,8 @@ export class ExtensionCard {
 
     /** @type {HTMLElement} */
     #element
-    /** @type {string} */
+    /** @type {object} */
     #dataCard
-    /** @type {string} */
-    #dataStatus
-    /** @type {boolean} */
-    #ariaHidden
     /** @type {HTMLElement} */
     #removeButton
     /** @type {HTMLElement} */
@@ -23,8 +19,6 @@ export class ExtensionCard {
         this.#dataCard = card;
         this.#removeButton = this.#element.querySelector(".card-extension_remove-button");
         this.#isActiveButton = this.#element.querySelector(".card-extension_is-active-button");
-        this.#dataStatus = this.#element.dataset.status;
-        this.#ariaHidden = this.#element.getAttribute("aria-hidden");
         this.init();
     }
 
@@ -33,15 +27,33 @@ export class ExtensionCard {
         this.#isActiveButton.addEventListener("click", this.#updateElement.bind(this));
     }
 
+    #getLocalStorage() {
+        const localStorageData = JSON.parse(localStorage.getItem("extensionsCards"));
+        const extensionLS = localStorageData.find(ext => ext.name === this.#dataCard.name);
+        return {localStorageData, extensionLS}
+    }
+
     #removeElement(e) {
         e.preventDefault();
-        this.#dataCard.isActive = false;
-        this.#dataCard.isDelete = true;
+        const {localStorageData, extensionLS} = this.#getLocalStorage();
+
+        extensionLS.isActive = false;
+        extensionLS.isDeleted = true;
+        
+        localStorage.setItem("extensionsCards", JSON.stringify(localStorageData));
         this.#element.remove();
     }
 
-    #updateElement() {
-        
+    #updateElement(e) {
+        e.preventDefault();
+        const {localStorageData, extensionLS} = this.#getLocalStorage();
+
+        extensionLS.isActive = extensionLS.isActive ? false : true;
+        this.#element.dataset.status = this.#element.dataset.status === "active" ? "inactive" : "active";
+        this.#element.setAttribute("aria-hidden", this.#element.getAttribute("aria-hidden") === "true" ? "false" : "true");
+        localStorage.setItem("extensionsCards", JSON.stringify(localStorageData));
+
+        this.#element.dispatchEvent(new CustomEvent("card-status-changed", {bubbles: true}));
     }
     
 }
