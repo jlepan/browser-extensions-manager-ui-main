@@ -50,7 +50,7 @@ Ce projet m’a permis de pratiquer :
 
 [Aperçu du profil version mobile light-theme](https://github.com/jlepan/browser-extensions-manager-ui-main/blob/main/public/design/mobile-design-light.jpg)
 
-[Aperçu du profil version mobile dark-theme](https://github.com/jlepan/browser-extensions-manager-ui-main/blob/main/design/mobile-design-dark.jpg)
+[Aperçu du profil version mobile dark-theme](https://github.com/jlepan/browser-extensions-manager-ui-main/blob/main/public/design/mobile-design-dark.jpg)
 
 ## Captures d'écran du projet
 
