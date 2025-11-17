@@ -8,7 +8,7 @@
 
 export async function loadCardExtension() {
   try {
-    const r = await fetch("/data/data.json", {
+    const r = await fetch("./data/data.json", {
       headers: {
         Accept: "application/json",
       },
