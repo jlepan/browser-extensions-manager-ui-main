@@ -36,6 +36,7 @@ export class ButtonsFilter {
       button.addEventListener("click", this.#handleClick.bind(this));
     });
     this.#containerCards.addEventListener("card-status-changed", this.#filterCards.bind(this));
+    this.#containerCards.addEventListener("extensions-restored", this.#filterCards.bind(this));
   }
 
   #handleClick(e) {

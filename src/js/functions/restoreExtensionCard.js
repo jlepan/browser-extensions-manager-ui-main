@@ -23,4 +23,6 @@ export function restoreExtensionCard() {
     localStorage.setItem("extensionsCards", JSON.stringify(cardsData));
     createExtensionCard(card, template, containerCards);
   });
+
+  containerCards.dispatchEvent(new CustomEvent("extensions-restored"));
 }
