@@ -1,105 +1,105 @@
 .group-cards-extension {
-    padding-block: 30px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    justify-content: center;
-    align-items: stretch;
-    gap: 15px;
+  padding-block: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
+  align-items: stretch;
+  gap: 15px;
 }
 
 @media only screen and (min-width: 768px) {
-    .group-cards-extension {
-        justify-content: flex-start;
-    }
+  .group-cards-extension {
+    justify-content: flex-start;
+  }
 }
 
 .card-extension[aria-hidden="true"] {
-    display: none;
+  display: none;
 }
 
 .card-extension {
-    display: none;
-    width: 100%;
-    max-width: 344px;
-    justify-self: center;
-    aspect-ratio: 16/9;
-    border-radius: var(--mediumRadius);
+  display: none;
+  width: 100%;
+  max-width: 344px;
+  justify-self: center;
+  aspect-ratio: 16/9;
+  border-radius: var(--mediumRadius);
 
-    padding: 20px;
+  padding: 20px;
 
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
-    gap: 0 15px
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  gap: 0 15px;
 }
 
 @media only screen and (min-width: 768px) {
-    .card-extension {
-        max-width: 380px;
-        aspect-ratio: 19/10;
-    }
+  .card-extension {
+    max-width: 380px;
+    aspect-ratio: 19/10;
+  }
 }
 
 .card-extension.visible {
-    display: grid
+  display: grid;
 }
 
 .card-extension_title {
-    margin-top: 2px;
-    font-weight: var(--boldWeight);
-    font-size: 1.25rem;
-    grid-column: 2;
-    grid-row: 1;
+  margin-top: 2px;
+  font-weight: var(--boldWeight);
+  font-size: 1.25rem;
+  grid-column: 2;
+  grid-row: 1;
 }
 
 .card-extension_description {
-    margin-block: 10px 25px;
-    line-height: 1.2;
-    grid-column: 2;
-    grid-row: 2;
+  margin-block: 10px 25px;
+  line-height: 1.2;
+  grid-column: 2;
+  grid-row: 2;
 }
 
 .card-extension_logo {
-    grid-column: 1;
-    grid-row: 1 / span 2;
+  grid-column: 1;
+  grid-row: 1 / span 2;
 }
 
 .card-extension_remove-button {
-    /*max-width: 35%;*/
-    width: fit-content;
-    grid-column: 1 / 3;
-    grid-row: 3;
+  /*max-width: 35%;*/
+  width: fit-content;
+  grid-column: 1 / 3;
+  grid-row: 3;
 }
 
 .card-extension_is-active-button {
-    justify-self: flex-end;
-    grid-column: 2;
-    grid-row: 3
+  justify-self: flex-end;
+  grid-column: 2;
+  grid-row: 3;
 }
 
 .light-theme .card-extension {
-    background-color: var(--lightItemsBackground);
-    border: var(--lightBorder);
-    box-shadow: var(--lightBoxShadow);
+  background-color: var(--lightItemsBackground);
+  border: var(--lightBorder);
+  box-shadow: var(--lightBoxShadow);
 }
 
 .dark-theme .card-extension {
-    background-color: hsl(224, 25%, 20%);
-    border: var(--darkBorder);
-    border-width: 1.8px
+  background-color: hsl(224, 25%, 20%);
+  border: var(--darkBorder);
+  border-width: 1.8px;
 }
 
 .light-theme .card-extension_title {
-    color: var(--lightTitleColor);
+  color: var(--lightTitleColor);
 }
 
 .dark-theme .card-extension_title {
-    color: var(--darkTitleColor)
+  color: var(--darkTitleColor);
 }
 
 .light-theme .card-extension_description {
-    color: var(--lightTextColor);
+  color: var(--lightTextColor);
 }
 
 .dark-theme .card-extension_description {
-    color: var(--darkTextColor);
+  color: var(--darkTextColor);
 }

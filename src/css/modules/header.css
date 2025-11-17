@@ -1,41 +1,40 @@
 header {
-    border-radius: var(--littleRadius);
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  border-radius: var(--littleRadius);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @media only screen and (min-width: 768px) {
-    header {
-        border-radius: var(--mediumRadius);
-        padding: 10px 15px
-    }
-    
+  header {
+    border-radius: var(--mediumRadius);
+    padding: 10px 15px;
+  }
 }
 
 .light-theme header {
-    background-color: var(--lightItemsBackground);
-    border: var(--lightBorder);
-    box-shadow: var(--lightBoxShadow);
+  background-color: var(--lightItemsBackground);
+  border: var(--lightBorder);
+  box-shadow: var(--lightBoxShadow);
 }
 
 .light-theme .dynamique-color-svg.red {
-    fill: var(--lightRed);
+  fill: var(--lightRed);
 }
 
 .light-theme .dynamique-color-svg.blue-white {
-    fill: #091540;
+  fill: #091540;
 }
 
 .dark-theme header {
-    background-color: var(--darkHeaderBackground);
+  background-color: var(--darkHeaderBackground);
 }
 
 .dark-theme .dynamique-color-svg.red {
-    fill: var(--darkRed)
+  fill: var(--darkRed);
 }
 
 .dark-theme .dynamique-color-svg.blue-white {
-    fill: #FFFFFF;
+  fill: #ffffff;
 }

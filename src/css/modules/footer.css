@@ -1,45 +1,45 @@
 footer {
-    margin-top: 20px;
-    font-weight: var(--mediumWeight);
+  margin-top: 20px;
+  font-weight: var(--mediumWeight);
 }
 
 footer a {
-    text-decoration: none;
-    transition: all 0.3s ease-in;
+  text-decoration: none;
+  transition: all 0.3s ease-in;
 }
 
 .light-theme footer {
-    color: var(--lightTextColor)
+  color: var(--lightTextColor);
 }
 
 .light-theme footer a {
-    color: var(--lightRed);
+  color: var(--lightRed);
 }
 
 .light-theme footer a:hover {
-    opacity: 0.6;
+  opacity: 0.6;
 }
 
 .light-theme footer a:is(:focus, :focus-visible) {
-    opacity: 0.6;
-    text-decoration: underline;
-    outline: none;
+  opacity: 0.6;
+  text-decoration: underline;
+  outline: none;
 }
 
 .dark-theme footer {
-    color: var(--darkTextColor)
+  color: var(--darkTextColor);
 }
 
 .dark-theme footer a {
-    color: var(--darkRed);
+  color: var(--darkRed);
 }
 
 .dark-theme footer a:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 .dark-theme footer a:is(:focus, :focus-visible) {
-    opacity: 0.8;
-    text-decoration: underline;
-    outline: none;
+  opacity: 0.8;
+  text-decoration: underline;
+  outline: none;
 }

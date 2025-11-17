@@ -1,18 +1,26 @@
 import { createExtensionCard } from "./createExtensionCard.js";
 
+/**
+ * Restaure les extensions supprimées.
+ * Parcourt les données du localStorage, réactive les cartes marquées comme supprimées,
+ * met à jour le localStorage et régénère les cartes restaurées dans le DOM.
+ *
+ * @returns {void}
+ */
+
 export function restoreExtensionCard() {
-    const cardsData = JSON.parse(localStorage.getItem("extensionsCards"));
+  const cardsData = JSON.parse(localStorage.getItem("extensionsCards"));
 
-    const template = document.querySelector("#card-extension");
-    const containerCards = document.querySelector(".group-cards-extension");
-    
-    cardsData.forEach(card => {
-        if(card.isDeleted === false) return
+  const template = document.querySelector("#card-extension");
+  const containerCards = document.querySelector(".group-cards-extension");
 
-        const cardLS = cardsData.find(ext => ext.name === card.name);
-        cardLS.isDeleted = false;
+  cardsData.forEach((card) => {
+    if (card.isDeleted === false) return;
 
-        localStorage.setItem("extensionsCards", JSON.stringify(cardsData));
-        createExtensionCard(card, template, containerCards);
-    })
+    const cardLS = cardsData.find((ext) => ext.name === card.name);
+    cardLS.isDeleted = false;
+
+    localStorage.setItem("extensionsCards", JSON.stringify(cardsData));
+    createExtensionCard(card, template, containerCards);
+  });
 }

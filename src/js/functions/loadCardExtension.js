@@ -6,21 +6,20 @@
  * @throws {Error} En cas d'échec du chargement des données.
  */
 
-
 export async function loadCardExtension() {
-    try {
-        const r = await fetch("/data/data.json", {
-            headers: {
-                Accept: "application/json",
-            },
-        });
-        if (!r.ok) {
-            throw new Error("Erreur de chargement des données");
-        }
-
-        return r.json();
-    } catch {
-        alert("Impossible de charger les données");
-        return
+  try {
+    const r = await fetch("/data/data.json", {
+      headers: {
+        Accept: "application/json",
+      },
+    });
+    if (!r.ok) {
+      throw new Error("Erreur de chargement des données");
     }
+
+    return r.json();
+  } catch {
+    alert("Impossible de charger les données");
+    return;
+  }
 }
