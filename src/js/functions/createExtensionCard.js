@@ -1,4 +1,4 @@
-import { ExtensionCard } from "../modules/extensionCard.js";
+import { ExtensionCard } from "../modules/ExtensionCard.js";
 
 /**
  * Génère une carte d’extension à partir des données fournies
