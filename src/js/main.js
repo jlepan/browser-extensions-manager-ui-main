@@ -8,10 +8,10 @@ window.addEventListener("DOMContentLoaded", () => {
   const themeManager = new ThemeManager();
   themeManager.init();
 
-  getExtensionsData();
-
-  initExtensionCard();
-  initFilters(".filter-group-extension-js", ".card-extension-js", ".group-cards-extension");
+  getExtensionsData().then(() => {
+    initExtensionCard();
+    initFilters(".filter-group-extension-js", ".card-extension-js", ".group-cards-extension");
+  });
 
   const restoreButton = document.querySelector(".restore-button-js");
   restoreButton.addEventListener("click", (e) => {
