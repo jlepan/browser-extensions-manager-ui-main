@@ -203,12 +203,16 @@ button:is(:focus, :focus-visible) {
 .card-extension_round-to-update {
   position: absolute;
   top: 50%;
+  right: 2%;
   transform: translateY(-50%);
   width: 45%;
   aspect-ratio: 1 / 1;
 
   background-color: var(--lightItemsBackground);
   border-radius: 50%;
+
+  transition: right 0.3s ease-in-out;
+
 }
 
 .card-extension[data-status="active"] .card-extension_round-to-update {
@@ -216,7 +220,7 @@ button:is(:focus, :focus-visible) {
 }
 
 .card-extension[data-status="inactive"] .card-extension_round-to-update {
-  left: 2%;
+  right: 50%;
 }
 
 /* BOUTON POUR RESTAURER LES CARD EXTENSION SUPPRIMÉES */
