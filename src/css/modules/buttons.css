@@ -1,15 +1,16 @@
 button {
   font-family: var(--baseFontFamily);
   cursor: pointer;
+  border: none;
+  border-radius: var(--bigRadius);
+  font-weight: 600;
+
   transition:
     background-color 0.3s ease,
     box-shadow 0.3s ease,
     border 0.3s ease,
     color 0.3s ease,
     opacity 0.3s ease;
-  border: none;
-  border-radius: var(--bigRadius);
-  font-weight: 600;
 }
 
 /* BOUTON DE CHANGEMENT DE THÈME */
@@ -40,6 +41,7 @@ button:is(:focus, :focus-visible) {
 .theme-button {
   width: 48px;
   aspect-ratio: 1/1;
+
   background-repeat: no-repeat;
   background-position: center;
   border: none !important;
@@ -105,6 +107,7 @@ button:is(:focus, :focus-visible) {
 
 .card-extension_remove-button {
   padding: 0.3em 1em 0.4em;
+
   font-size: 1.1rem;
   letter-spacing: -0.04em;
 }
@@ -198,14 +201,14 @@ button:is(:focus, :focus-visible) {
 }
 
 .card-extension_round-to-update {
-  background-color: var(--lightItemsBackground);
   position: absolute;
-  width: 45%;
-  /*height: 88%;*/
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
   top: 50%;
   transform: translateY(-50%);
+  width: 45%;
+  aspect-ratio: 1 / 1;
+
+  background-color: var(--lightItemsBackground);
+  border-radius: 50%;
 }
 
 .card-extension[data-status="active"] .card-extension_round-to-update {
@@ -224,6 +227,10 @@ button:is(:focus, :focus-visible) {
   right: 10px;
   width: 35px;
   aspect-ratio: 1/1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   font-size: 1.4rem;
   line-height: 1;
